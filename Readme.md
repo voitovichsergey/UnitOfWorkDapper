@@ -3,32 +3,36 @@
 Unit of Work is a pattern that defines a logical transaction, i.e. atomic synchronization of changes in objects placed in a UoW object with a repository (database).
 If we turn to the original description of this pattern by Martin Fowler, it can be seen that the object implementing this pattern is responsible for accumulating information about which objects are included in the transaction and what their changes are relative to the original values in the repository. The main work is done in the commit() method, which is responsible for calculating changes in objects stored in UoW and synchronizing these changes with the repository (database).
 
-## This implementation (with Entity Framework)
+## This implementation (with Dapper)
 1. Install this nuget package
-2. Create DbContext of your database
+2. Create an IDbConnection inheritor class
 ```cs
-    public sealed class ApplicationContext : DbContext
+    public sealed class MyAppConnection : SqliteConnection
     {
-        //...
     }
 ```
-3. In the Program.cs file, add the IUnitOfWork singleton with DbContext implementation to the services
+3. In the Program.cs file, add the IUnitOfWork singleton to the services with the new connection class from the previous paragraph
 ```cs
-builder.Services.AddSingleton<IUnitOfWork, UnitOfWork<ApplicationContext>>();
+    const string ConnectionString = "Data Source=AppDatabase.db";
+    builder.Services.AddSingleton<IUnitOfWork>(new UnitOfWork<MyAppConnection>(ConnectionString));
 ```
 4. Create your own repository interfaces inherited from IUowRepository
 ```cs
 public interface ICarRepository : IUowRepository
 ```
-5. When implementing repository interfaces, create a constructor with the DbContext parameter
+5. When implementing repository interfaces, create a constructor with the IDbConnection parameter
 ```cs
 /// <inheritdoc/>
 public sealed class CarRepository : ICarRepository
 {
-    public CarRepository(DbContext context)
+    private readonly MyAppConnection _connection;
+
+    public CarRepository(IDbConnection connection)
     {
+        _connection = (MyAppConnection)connection;
         //...
     }
+
     //...
 ```
 6. At the BLL, use StartTransaction() and CommitAsync() to ensure atomicity
@@ -81,9 +85,6 @@ public class DriverService : IDriverService
         }
     }
 ```
-## For what
-- Move DbContext from BLL to DAL
-- Hide large linq instructions in repositories
 
 ## License
 MIT
