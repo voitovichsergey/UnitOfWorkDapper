@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>Voitovich.Patterns.UnitOfWork.Dapper</PackageId>
+    <Title>Pattern UnitOfWork for Dapper</Title>
+    <Version>1.0.0</Version>
+    <Authors>Voitovich Sergey</Authors>
+    <PackageTags>UnitOfWork, Dapper, Uow, Behaviour, Pattern</PackageTags>
+    <Company>$(Authors)</Company>
+    <Product>$(PackageId)</Product>
+    <Description>Simple implementation of the "Unit Of Work" pattern for the Dapper.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>Readme.md</PackageReadmeFile>
+    <PackageIcon>uow.png</PackageIcon>
+    <RepositoryUrl>https://github.com/voitovichsergey/UnitOfWorkDapper</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/voitovichsergey/UnitOfWorkDapper</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="Readme.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Update="uow.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
