@@ -1,7 +1,7 @@
-﻿using EntityFramework.UnitOfWork.Interfaces;
+﻿using Dapper.UnitOfWork.Interfaces;
 using System.Data;
 
-namespace EntityFramework.UnitOfWork
+namespace Dapper.UnitOfWork
 {
     internal class UnitOfWorkHandler<TConnection> : IUowHandler where TConnection : IDbConnection
     {

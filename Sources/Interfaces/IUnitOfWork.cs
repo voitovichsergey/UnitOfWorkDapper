@@ -1,4 +1,4 @@
-﻿namespace EntityFramework.UnitOfWork.Interfaces
+﻿namespace Dapper.UnitOfWork.Interfaces
 {
     public interface IUnitOfWork
     {

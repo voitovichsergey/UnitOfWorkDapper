@@ -1,7 +1,7 @@
-﻿using EntityFramework.UnitOfWork.Interfaces;
+﻿using Dapper.UnitOfWork.Interfaces;
 using System.Data;
 
-namespace EntityFramework.UnitOfWork
+namespace Dapper.UnitOfWork
 {
     public sealed class UnitOfWork<TConnection> : IUnitOfWork where TConnection : IDbConnection
     {

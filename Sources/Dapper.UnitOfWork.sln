@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFramework.UnitOfWork.Dapper", "EntityFramework.UnitOfWork.Dapper.csproj", "{35A0EE8C-2006-4BBB-8791-F0476C981F60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dapper.UnitOfWork", "Dapper.UnitOfWork.csproj", "{35A0EE8C-2006-4BBB-8791-F0476C981F60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
