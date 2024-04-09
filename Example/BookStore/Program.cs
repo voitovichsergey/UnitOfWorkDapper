@@ -2,8 +2,8 @@ using BookStore.Infrastructure.Business;
 using BookStore.Infrastructure.Data;
 using BookStore.Services.Interfaces;
 using BookStoreApp.Helpers;
-using EntityFramework.UnitOfWork;
-using EntityFramework.UnitOfWork.Interfaces;
+using Dapper.UnitOfWork;
+using Dapper.UnitOfWork.Interfaces;
 
 const string ConnectionString = "Data Source=bookstore.db";
 var builder = WebApplication.CreateBuilder(args);

@@ -1,6 +1,6 @@
 ﻿using BookStore.Domain.Interfaces;
 using BookStore.Services.Interfaces;
-using EntityFramework.UnitOfWork.Interfaces;
+using Dapper.UnitOfWork.Interfaces;
 
 namespace BookStore.Infrastructure.Business
 {

@@ -3,7 +3,7 @@ using BookStore.Domain.Core;
 using BookStore.Domain.Interfaces;
 using BookStore.Services.Interfaces;
 using BookStore.Services.Interfaces.Dto;
-using EntityFramework.UnitOfWork.Interfaces;
+using Dapper.UnitOfWork.Interfaces;
 
 namespace BookStore.Infrastructure.Business
 {

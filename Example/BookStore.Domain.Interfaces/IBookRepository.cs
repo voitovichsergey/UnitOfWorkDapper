@@ -1,5 +1,5 @@
 ﻿using BookStore.Domain.Core;
-using EntityFramework.UnitOfWork.Interfaces;
+using Dapper.UnitOfWork.Interfaces;
 
 namespace BookStore.Domain.Interfaces
 {
